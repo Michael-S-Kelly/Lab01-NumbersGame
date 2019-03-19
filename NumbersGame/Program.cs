@@ -17,7 +17,9 @@ namespace NumbersGame
                 Console.WriteLine("Enter a number greater than zero"); //message to user to enter a number
                 string answer = Console.ReadLine(); //collects user entry as a string
                 int arrayLength = Convert.ToInt32(answer); //converts the user input into an integer to be used in the Populate Method as the length of the array
-                Populate(arrayLength);  //sends the user input to the Populate Method
+                int[] arrayResult = Populate(arrayLength);  //sends the user input to the Populate Method
+                int sum = GetSum(arrayResult);
+                int product = GetProduct(arrayResult);
             }
             catch (FormatException formEx)
             {
@@ -30,7 +32,7 @@ namespace NumbersGame
             }
         }
 
-        static void Populate(int arrayLength)
+        static int[] Populate(int arrayLength)
         {
             try
             {
@@ -60,14 +62,21 @@ namespace NumbersGame
             {
                 Console.WriteLine(genEx.Message);
             }
+
+            return arrayNum;
         }
 
-        static void GetSum()
+        static void GetSum(int[] arrayResult)
         {
             try
             {
+                int runningSum = 0; //establishes the initial value for the runningSum
+                for (int i = 0; i < arrayResult.Length; i++) //adds each index value into runningSum
+                 {
+                    runningSum = runningSum + arrayResult[i];
+                 }
 
-
+                return runningSum;
 
             }
             catch (Exception genEx)
