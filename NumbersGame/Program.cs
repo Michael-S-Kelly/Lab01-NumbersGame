@@ -19,7 +19,8 @@ namespace NumbersGame
                 int arrayLength = Convert.ToInt32(answer); //converts the user input into an integer to be used in the Populate Method as the length of the array
                 int[] arrayResult = Populate(arrayLength);  //sends the user input to the Populate Method
                 int sum = GetSum(arrayResult);
-                int product = GetProduct(arrayResult);
+
+                int product = GetProduct(sum, arrayResult);
 
 
             }
@@ -32,6 +33,7 @@ namespace NumbersGame
             {
                 Console.WriteLine(genEx.Message);
             }
+
         }
 
         static int[] Populate(int arrayLength)
@@ -78,7 +80,7 @@ namespace NumbersGame
                     runningSum = runningSum + arrayResult[i];
                  }
 
-                return runningSum;
+                
 
             }
             catch (OverflowException ofEx)
@@ -90,19 +92,19 @@ namespace NumbersGame
             {
                 Console.WriteLine(genEx.Message);
             }
+
+            return runningSum;
         }
 
-        static void GetProduct(int[] arrayResult)
+        static void GetProduct(int firstMult, int[] arrayResult)
         {
             try
             {
-                int runningProduct = 1;  //establishes the initial value for the running Product
-                for (int i = 0; i < arrayResult.Lenght; i++) //multiplies each index value to the running Product
-                {
-                    runningProduct = runningProduct * arrayResult[i];
-                }
-
-                return runningProduct;
+                Console.WriteLine($"Please select a random number between 1 and {arrayResult.Length}");
+                string answer = Console.ReadLine();
+                int indexMult = Convert.ToInt32(answer);
+                int secondMult = arrayResult[indexMult];
+                int product = firstMult * secondMult;
             }
             catch (OverflowException ofEx)
             {
@@ -113,6 +115,8 @@ namespace NumbersGame
             {
                 Console.WriteLine(genEx.Message);
             }
+
+            return product;
         }
 
         static void GetQuotient()
