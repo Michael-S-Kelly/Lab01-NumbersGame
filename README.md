@@ -56,6 +56,7 @@ Then select and open ```NumbersGame.sln```
 ### Collaborators
 
 ### Contributors
+Phil Werner
 
 ### Other Resources
 
