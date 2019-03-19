@@ -20,6 +20,8 @@ namespace NumbersGame
                 int[] arrayResult = Populate(arrayLength);  //sends the user input to the Populate Method
                 int sum = GetSum(arrayResult);
                 int product = GetProduct(arrayResult);
+
+
             }
             catch (FormatException formEx)
             {
@@ -79,19 +81,33 @@ namespace NumbersGame
                 return runningSum;
 
             }
+            catch (OverflowException ofEx)
+            {
+                Console.WriteLine("The sum total is too big of a number");
+                Console.WriteLine(ofEx.Message);
+            }
             catch (Exception genEx)
             {
                 Console.WriteLine(genEx.Message);
             }
         }
 
-        static void GetProduct()
+        static void GetProduct(int[] arrayResult)
         {
             try
             {
+                int runningProduct = 1;  //establishes the initial value for the running Product
+                for (int i = 0; i < arrayResult.Lenght; i++) //multiplies each index value to the running Product
+                {
+                    runningProduct = runningProduct * arrayResult[i];
+                }
 
-
-
+                return runningProduct;
+            }
+            catch (OverflowException ofEx)
+            {
+                Console.WriteLine("The product total is too big of a number");
+                Console.WriteLine(ofEx.Message);
             }
             catch (Exception genEx)
             {
