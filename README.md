@@ -11,9 +11,7 @@
 
 ## Description
 ***[Tell me about your application, should be about a paragraph]***
-This is a C# console application that will ask a user several questions about me, the
-developer. There are multiple question types ranging from inputting a number to True or False.
-At the end of the game the user receives their total score.
+This is a C# console application that will ask a user to give a lenth of an array.  Input the integers in the array, an index number, and a divisor.  It will then manipulate the numbers accordingly.
 
 ------------------------------
 
@@ -29,7 +27,7 @@ Next navigate to the location you cloned the Repository.
 
 Double click on the ```Lab01-NumbersGame``` directory.
 
-Then select and open ```AboutMe.sln```
+Then select and open ```NumbersGame.sln```
 
 ------------------------------
 
@@ -50,6 +48,16 @@ Then select and open ```AboutMe.sln```
 1.3: *Added summary comments to the methods* - 8 Nov 2010
 1.2: *Changed variable names to follow proper convention* - 6 Nov 2010
 1.1: *Added a Try/Catch/Finally for Question 2* - 5 Nov 2010
+
+
+------------------------------
+## Collaborators, Contributors, and Other Resources used
+
+### Collaborators
+
+### Contributors
+
+### Other Resources
 
 
 ------------------------------
