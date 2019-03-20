@@ -20,9 +20,27 @@ namespace NumbersGame
                 int[] arrayResult = Populate(arrayLength);  //sends the user input to the Populate Method
                 int sum = GetSum(arrayResult);
 
-                int product = GetProduct(sum, arrayResult);
+                Console.WriteLine($"Please select a random number between 1 and {arrayResult.Length}");
+                string answer2 = Console.ReadLine();
+                int indexMult = Convert.ToInt32(answer2);
+                int secondMult = arrayResult[indexMult];
+                int product = GetProduct(sum, secondMult);
 
-                int quotent = GetQuotient(product);
+                Console.WriteLine($"Please enter a number to divide your product {product} by");
+                string divNum = Console.ReadLine(); //gathers the users divisor
+                int divisor = Convert.ToInt32(divNum); //convert to int
+                int quotent = GetQuotient(product, divisor);
+
+                Console.WriteLine($"Your array size is: {arrayLength}");
+                Console.WriteLine($"The numbers in the array are {string.Join(",", arrayResult)}");
+
+                Console.WriteLine($"The sum of the array is {sum}");
+
+                Console.WriteLine($"{sum} * {secondMult} = {product}");
+                Console.WriteLine($"{product} / {divisor} = {quotent}");
+                Console.WriteLine("Program is complete.");
+
+                Console.ReadKey();
 
             }
             catch (FormatException formEx)
@@ -98,19 +116,13 @@ namespace NumbersGame
             return runningSum;
         }
 
-        static int GetProduct(int firstMult, int[] arrayResult)
+        static int GetProduct(int firstMult, int secondMult)
         {
             int product = 1;
 
             try
             {
-                Console.WriteLine($"Please select a random number between 1 and {arrayResult.Length}");
-                string answer = Console.ReadLine();
-                int indexMult = Convert.ToInt32(answer);
-                int secondMult = arrayResult[indexMult];
-
                 product = firstMult * secondMult;
-
             }
             catch (OverflowException ofEx)
             {
@@ -126,15 +138,14 @@ namespace NumbersGame
             return product;
         }
 
-        static int GetQuotient(int product)
+        static int GetQuotient(int product, int divisor)
         {
+            int quotient = 1;
             try
             {
-                Console.WriteLine($"Please enter a number to divide your product {product} by");
-                string divNum = Console.ReadLine(); //gathers the users divisor
-                int divisor = Convert.ToInt32(divNum); //convert to int
 
-                int quotient = product / divisor;
+
+                quotient = product / divisor;
 
                 return quotient;
             }
@@ -143,7 +154,7 @@ namespace NumbersGame
                 Console.WriteLine(genEx.Message);
             }
 
-            return product;
+            return quotient;
         }
     }
 }
