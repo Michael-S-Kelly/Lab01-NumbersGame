@@ -35,11 +35,11 @@ Then select and open ```NumbersGame.sln```
 ***[Add screenshots of your application in action]***
 
 ##### Application Start
-![Image 1](Assets/Initial)
+![Image 1](Assets/Initial.png)
 ##### Using the Application
-![Image 1](Assets/basic)
+![Image 2](Assets/basic.png)
 ##### Application End
-![Image 1](Assets/end)
+![Image 3](Assets/end.png)
 
 ------------------------------
 
